@@ -24,7 +24,6 @@ function linearSearch(arr, target) {
 console.log(linearSearch([10, 20, 30, 40, 50], 30)); // Output: 2
 console.log(linearSearch([10, 20, 30, 40, 50], 100)); // Output: -1
 
-
 // 📌 Use Case: Works well for small or unsorted datasets.
 
 // 2. Binary Search (Divide & Conquer)
@@ -43,7 +42,6 @@ console.log(linearSearch([10, 20, 30, 40, 50], 100)); // Output: -1
 
 function binarySearch(arr, target) {
     let left = 0, right = arr.length - 1;
-
     while (left <= right) {
         let mid = Math.floor((left + right) / 2);
 
@@ -51,7 +49,6 @@ function binarySearch(arr, target) {
         else if (arr[mid] < target) left = mid + 1;
         else right = mid - 1;
     }
-
     return -1; // Not found
 }
 
@@ -66,7 +63,7 @@ function binarySearchRecursive(arr, target, left = 0, right = arr.length - 1) {
     let mid = Math.floor((left + right) / 2);
     if (arr[mid] === target) return mid;
     else if (arr[mid] < target) return binarySearchRecursive(arr, target, mid + 1, right);
-    else return binarySearchRecursive(arr, target, left, mid - 1);
+    else return binarySearc/hRecursive(arr, target, left, mid - 1);
 }
 
 console.log(binarySearchRecursive([2, 4, 6, 8, 10, 12], 10)); // Output: 4

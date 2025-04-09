@@ -6,12 +6,10 @@
 function wordFrequency(str) {
     let words = str.split(" ");
     let hashMap = new Map();
-
     for (let word of words) {
         word = word.toLowerCase(); // Normalize to lowercase
         hashMap.set(word, (hashMap.get(word) || 0) + 1);
     }
-
     return hashMap;
 }
 
@@ -19,6 +17,8 @@ function wordFrequency(str) {
 let text = "hello world hello everyone";
 console.log(wordFrequency(text)); 
 // Output: Map { 'hello' => 2, 'world' => 1, 'everyone' => 1 }
+
+
 // ✅ Explanation:
 
 // We split the string into words.
@@ -40,7 +40,9 @@ function firstNonRepeatingChar(str) {
 
     // Step 1: Store frequency of each character
     for (let char of str) {
-        hashMap.set(char, (hashMap.get(char) || 0) + 1);
+        let value = hashMap.set(char, (hashMap.get(char) || 0) + 1);
+        console.log(`result is`, value);
+        
     }
 
     // Step 2: Find the first character with frequency 1
@@ -74,7 +76,7 @@ function twoSum(nums, target) {
 
     for (let i = 0; i < nums.length; i++) {
         let complement = target - nums[i];
-
+        
         if (hashMap.has(complement)) {
             return [hashMap.get(complement), i]; // Return the indices
         }

@@ -153,15 +153,12 @@ console.log(mergeSort([38, 27, 43, 3, 9, 82, 10])); // Output: [3, 9, 10, 27, 38
 
 function quickSort(arr) {
     if (arr.length <= 1) return arr; // Base case
-
     let pivot = arr[arr.length - 1]; // Choosing last element as pivot
-    let left = arr.filter(el => el < pivot);
+    let left = arr.filter(el => el < pivot);    
     let right = arr.filter(el => el > pivot);
     let middle = arr.filter(el => el === pivot);
-
     return [...quickSort(left), ...middle, ...quickSort(right)];
 }
-
 console.log(quickSort([10, 7, 8, 9, 1, 5])); // Output: [1, 5, 7, 8, 9, 10]
 
 
@@ -174,8 +171,6 @@ console.log(quickSort([10, 7, 8, 9, 1, 5])); // Output: [1, 5, 7, 8, 9, 10]
 // Time Complexity: O(n + k), where k is the range of input values.
 // Code:
 // js
-
-
 
 function countingSort(arr) {
     let max = Math.max(...arr);
